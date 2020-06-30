@@ -11,7 +11,7 @@ function getConfig($config_file_location) {
     return $b_config;
 }
 
-function saveConfig($config, $config_file_location): void {
+function saveConfig($config, $config_file_location) {
     $config_str = "";
 
     $props = array_keys($config);
