@@ -12,7 +12,7 @@
 </head>
 <body>
     <center>
-        <img src="static/aura-centre-white.png" width="768" height="295"  alt="Aura Logo"/>
+        <img src="/static/aura-centre-white.gif" width="768" height="295"  alt="Aura Logo"/>
         <h1>What would you like to do?</h1>
         <hr /> <br />
         <ul id="menu">

@@ -4,7 +4,7 @@
 </head>
 <body>
 <center>
-    <img src="static/aura-centre-white.png" width="768" height="295"  alt="Aura Logo"/><br />
+    <img src="/static/aura-centre-white.gif" width="768" height="295"  alt="Aura Logo"/><br />
     <a href="/">Back to Home</a>
     <hr /> <br />
     <p><b>Aura Build String:</b><br /> <span><?php $file = file_get_contents('/aura-build-info'); echo $file; ?></span></p>

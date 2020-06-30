@@ -9,8 +9,8 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if(isset($_POST["launchLinux"])) {
                     // Super unsafe change this
-                    $output = exec($_POST["launchLinux"] . " > /dev/null &");
-                    echo $output;
+                    //$output = exec($_POST["launchLinux"] . " > /dev/null &");
+                    //echo $output;
                     echo "<p>OK.</p>";
                     echo "<a href=\"/settings\">Back to Settings</a>";
                 } else {
