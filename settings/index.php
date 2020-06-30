@@ -6,6 +6,7 @@
         <center>
             <?php
             require "./basilisk_config.php";
+            $config_file_location = "/root/.basilisk_ii_prefs";
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if(isset($_POST["launchLinux"])) {
                     // Super unsafe change this
@@ -14,10 +15,10 @@
                     echo "<p>OK.</p>";
                     echo "<a href=\"/settings\">Back to Settings</a>";
                 } else {
-                    $config = getConfig();
+                    $config = getConfig($config_file_location);
                     $config["screen"] = "win/" . $_POST["screen_width"] . "/" . $_POST["screen_height"];
                     $config["ramsize"] = $_POST["ramsize"];
-                    saveConfig($config);
+                    saveConfig($config, $config_file_location);
                     echo "<hr /> <h1>Updated. Please restart your system!</h1>";
                 }
             } else {
@@ -26,7 +27,7 @@
                 <a href="/">Back to Home</a>
                 <hr />
                 <?php
-                $config = getConfig();
+                $config = getConfig($config_file_location);
                 $resolution = explode("/", $config["screen"]);
                 ?>
                 <!--<h2>Launch X11 Application</h2>

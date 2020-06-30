@@ -1,6 +1,7 @@
 <?php
-function getConfig(): array {
-    $b_config_file = file(getenv("HOME") . "/.basilisk_ii_prefs");
+
+function getConfig($config_file_location) {
+    $b_config_file = file($config_file_location);
     $b_config = array();
     foreach($b_config_file as $option) {
         $o = explode(" ", trim($option));
@@ -10,7 +11,7 @@ function getConfig(): array {
     return $b_config;
 }
 
-function saveConfig($config): void {
+function saveConfig($config, $config_file_location): void {
     $config_str = "";
 
     $props = array_keys($config);
@@ -18,5 +19,5 @@ function saveConfig($config): void {
         $config_str = $config_str . $p . " " . $config[$p] . "\n";
     }
     #echo $config_str;
-    file_put_contents(getenv("HOME") . "/.basilisk_ii_prefs", $config_str);
+    file_put_contents($config_file_location, $config_str);
 }
