@@ -20,6 +20,7 @@
                     $config["ramsize"] = $_POST["ramsize"];
                     saveConfig($config, $config_file_location);
                     echo "<hr /> <h1>Updated. Please restart your system!</h1>";
+                    echo "<br /> Fully shutdown using the Shut Down option in the Special menu of Finder. <b>Do not select Restart, as this will not restart the emulator.</b>";
                 }
             } else {
             ?>
